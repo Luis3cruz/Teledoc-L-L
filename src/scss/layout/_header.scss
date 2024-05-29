@@ -1,0 +1,83 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.header {
+  background-color: v.$verde;
+  @include m.tablet {
+    &.fixed {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      box-shadow: 0.1rem 0.2rem 0.3rem #333;
+    }
+  }
+
+  /* AQUI CREAMOS LOS MEDIA QUERIES QUE AHORA SE TRABAJAN COMO MIXINS, NOS VAN A PERMITIR CREAR MAS FACILMENTE LOS MEDIA QUERIES HACIENDO USO DE LOS MIXINS/**/
+  /*
+  @include m.telefono {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
+
+  @include m.tablet {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
+
+  @include m.desktop {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
+  @include m.desktopXL {
+    color: white;
+    width: 10px;
+    height: 1px;
+  }
+*/
+  .contenido-header {
+    padding: 2rem;
+    @include m.tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+
+  h1 {
+    color: v.$negro;
+    text-align: center;
+    font-size: 4rem;
+    @include m.tablet {
+      text-align: left;
+      margin: 0;
+    }
+  }
+}
+
+.navegacion-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  @include m.tablet {
+    flex-direction: row;
+  }
+  a {
+    color: v.$negro;
+    font-size: 2.4rem;
+
+    &:hover {
+      color: v.$amarillo;
+    }
+  }
+}
+
+.imagelogo {
+  width: 100px;
+  height: auto;
+  margin-right: 70px;
+}

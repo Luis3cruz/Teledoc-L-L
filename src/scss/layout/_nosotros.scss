@@ -1,0 +1,20 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.sobre-nosotros {
+  @include m.contenedor;
+  @include m.tablet {
+    @include m.grid(2);
+  }
+}
+
+.contenido-nosotros {
+  margin-top: 5rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  .fecha {
+    color: v.$verde;
+    font-weight: 700;
+  }
+}

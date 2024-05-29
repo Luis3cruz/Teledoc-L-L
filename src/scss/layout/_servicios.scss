@@ -1,0 +1,53 @@
+@use "base/variables" as v;
+@use "base/mixins" as m;
+
+.servicios {
+  background-color: v.$azulclaro;
+  h3 {
+    text-align: center;
+    color: v.$blanco;
+  }
+  p {
+    text-align: center;
+  }
+}
+
+.subtitulo {
+  text-align: center;
+  color: black;
+  font-weight: bold;
+}
+
+.servicios-contenedor {
+  padding: 20px; /* Espacio interno del contenedor */
+  @include m.contenedor;
+  @include m.tablet {
+    @include m.grid(2);
+  }
+}
+
+.servicio {
+  padding-top: 5rem;
+
+  .nombre-servicio {
+    font-size: 2.4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.bg-morado {
+  background-color: rgb(99, 99, 177);
+}
+.bg-verde {
+  background-color: v.$verde;
+}
+
+.image {
+  width: 600px;
+  height: auto;
+  padding: 20px;
+}
